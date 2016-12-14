@@ -110,4 +110,24 @@ object MatchTest extends App{
   match_tuple(("xxx", "mark", "fimi"))
   match_tuple(("xxx", "mark", "fimi","sb"))
 
+  /**
+    * 模式匹配-->case class
+    * @param person
+    */
+  def judgeIdentify(person: Person2): Unit ={
+    person match {
+      case Teacher(name , subject) => println(name + "," + subject)
+      case Student2(name, classroom) => println(name + "," + classroom)
+      case _ => println("============================")
+    }
+  }
+
+  var p1 = Teacher("beifeng","Scala")
+  var p2 = Student2("zhangsan", "1#101")
+  judgeIdentify(p1)
+
 }
+
+class Person2
+case class Teacher(name: String , subject: String) extends Person2
+case class Student2(name: String , classroom: String) extends Person2
