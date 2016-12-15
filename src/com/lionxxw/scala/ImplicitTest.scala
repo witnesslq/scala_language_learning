@@ -60,7 +60,7 @@ object ImplicitTest extends App{
   /**
     * 隐式参数,指的是在函数或者方法中,定义一个用implicit修饰的参数
     */
-  implicit var pen = new SignPen  // 需先声明一个隐式变量
+  implicit val pen = new SignPen  // 需先声明一个隐式变量
   def signForExam(name: String)(implicit signPen: SignPen): Unit ={
     pen.write(name+" sign on Exam")
   }
