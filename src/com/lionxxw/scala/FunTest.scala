@@ -74,4 +74,9 @@ object FunTest extends App{
     * reduceLeft:从左侧元素开始,进行reduce操作,即先对元素1和元素2进行处理,然后结果与元素3处理,依次类推
     */
   println((1 to 9).reduceLeft(_ * _)) // 相当于1*2*3...*9
+
+  /**
+    * 数组排序,从大到小
+    */
+  println(Array(3,4,2,1,5,7).sortWith(_>_))
 }
